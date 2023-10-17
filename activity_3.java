@@ -30,25 +30,24 @@ public class Department {
     }
 
     
-    public boolean checkEmployee(int eID) {
+    public boolean checkEmployee(int empID) {
+        // Overall code was made more concise and readable
+        // Attributed to instantiation of employee exists boolean variable
+        
+        
+        // Instantiation is based on the contains methods of employeeIDs rather than using for loop
+        // eID was changed to employeeID to improve readability
+        boolean employeeExists = employeeIDs.contains(empID);
 
-	int p=0;
-	for (int i = 0; i < this.employee.size(); i++){
-check=this.employee.get(i);
-            if (check==eID) {
-                p=1;
-            }
+        // employeeExists variable used for the if else rather than ambiguous value such as p
+        if (employeeExists) {
+            System.out.println("Employee exists");
+        } else {
+            System.out.println("Employee doesn't exist");
         }
 
-        if (p==1)
-{
-System.out.println("Employee exists");
-return true;
-}
-else{
-System.out.println("Employee doesn't exists");
-return false;
-	    }
+        // Reduced redundent return statements to 1 by utilising employeeExists as return variable
+        return employeeExists;
     }
 
     
